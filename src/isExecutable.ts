@@ -9,7 +9,7 @@ const isexe = promisify(isexeCB)
 
 export default async function isExecutable (t: Test, filePath: string) {
   if (IS_WINDOWS) {
-    t.ok(await isexe(filePath), `${filePath} is executable`)
+    t.ok(await isexe(`${filePath}.cmd`), `${filePath}.cmd is executable`)
     return
   }
 

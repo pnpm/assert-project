@@ -4,9 +4,11 @@
 
 [![npm version](https://img.shields.io/npm/v/@pnpm/assert-project.svg)](https://www.npmjs.com/package/@pnpm/assert-project) [![Build Status](https://img.shields.io/travis/pnpm/assert-project/master.svg)](https://travis-ci.org/pnpm/assert-project)
 
-## Install
+## Installation
 
+```
 pnpm install -D @pnpm/assert-project
+```
 
 ## Usage
 

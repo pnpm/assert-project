@@ -8,6 +8,8 @@ import {Test} from 'tape'
 import writePkg = require('write-pkg')
 import isExecutable from './isExecutable'
 
+export {isExecutable}
+
 export default (t: Test, projectPath: string, encodedRegistryName?: string) => {
   const ern = encodedRegistryName || 'localhost+4873'
   const modules = path.join(projectPath, 'node_modules')

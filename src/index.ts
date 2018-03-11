@@ -62,7 +62,7 @@ export default (t: Test, projectPath: string, encodedRegistryName?: string) => {
     },
     async loadCurrentShrinkwrap () {
       try {
-        return await loadYamlFile<any>('node_modules/.shrinkwrap.yaml') // tslint:disable-line
+        return await loadYamlFile<any>(path.join(modules, '.shrinkwrap.yaml')) // tslint:disable-line
       } catch (err) {
         if (err.code === 'ENOENT') return null
         throw err
@@ -70,7 +70,7 @@ export default (t: Test, projectPath: string, encodedRegistryName?: string) => {
     },
     async loadModules () {
       try {
-        return await loadYamlFile<any>('node_modules/.modules.yaml') // tslint:disable-line
+        return await loadYamlFile<any>(path.join(modules, '.modules.yaml')) // tslint:disable-line
       } catch (err) {
         if (err.code === 'ENOENT') return null
         throw err
@@ -78,7 +78,7 @@ export default (t: Test, projectPath: string, encodedRegistryName?: string) => {
     },
     async loadShrinkwrap () {
       try {
-        return await loadYamlFile<any>('shrinkwrap.yaml') // tslint:disable-line
+        return await loadYamlFile<any>(path.join(projectPath, 'shrinkwrap.yaml')) // tslint:disable-line
       } catch (err) {
         if (err.code === 'ENOENT') return null
         throw err

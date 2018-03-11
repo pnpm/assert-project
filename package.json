@@ -46,6 +46,7 @@
     "lint-test": "tslint -c tslint.json --project test",
     "tsc": "rimraf lib && tsc",
     "prepublishOnly": "npm run tsc",
+    "pretest": "pnpm i --prefix test/fixture/project",
     "test": "npm run lint && npm run lint-test && preview && ts-node test"
   },
   "dependencies": {

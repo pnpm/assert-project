@@ -1,9 +1,11 @@
+import {
+  Modules,
+  read as readModules,
+} from '@pnpm/modules-yaml'
 import fs = require('fs')
 import loadYamlFile = require('load-yaml-file')
 import path = require('path')
 import exists = require('path-exists')
-// TODO: move to separate packaeg
-import {Modules, read as readModules} from 'supi/lib/fs/modulesController'
 import {Test} from 'tape'
 import writePkg = require('write-pkg')
 import isExecutable from './isExecutable'
@@ -68,14 +70,7 @@ export default (t: Test, projectPath: string, encodedRegistryName?: string) => {
         throw err
       }
     },
-    async loadModules () {
-      try {
-        return await loadYamlFile<any>(path.join(modules, '.modules.yaml')) // tslint:disable-line
-      } catch (err) {
-        if (err.code === 'ENOENT') return null
-        throw err
-      }
-    },
+    loadModules: () => readModules(modules),
     async loadShrinkwrap () {
       try {
         return await loadYamlFile<any>(path.join(projectPath, 'shrinkwrap.yaml')) // tslint:disable-line

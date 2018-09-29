@@ -1,3 +1,5 @@
+> This package has been moved to the [pnpm](https://github.com/pnpm/pnpm) multi-package repository.
+
 # @pnpm/assert-project
 
 > Utils for testing projects that use pnpm
